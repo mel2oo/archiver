@@ -1,4 +1,4 @@
-module github.com/mholt/archiver/v4
+module github.com/mel2oo/archiver/v4
 
 go 1.18
 

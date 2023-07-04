@@ -107,6 +107,9 @@ func (z Zip) Archive(ctx context.Context, output io.Writer, files []File) error 
 
 	for i, file := range files {
 		if err := z.archiveOneFile(ctx, zw, i, file); err != nil {
+			if z.ContinueOnError && ctx.Err() == nil {
+				continue
+			}
 			return err
 		}
 	}
